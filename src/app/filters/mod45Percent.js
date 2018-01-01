@@ -1,4 +1,4 @@
-export default class Mod45Percent {
+export default class Mod45Percent { // NOTE: Change this to your new class name
   constructor(canvas, ctx) {
     console.log('loaded Mod45Percent filter'); // NOTE: Put class name here
     this.canvas = canvas;
@@ -29,7 +29,6 @@ export default class Mod45Percent {
       this.ctx = ctx;
     };
 
-    // NOTE: Every filter needs a handleApply function
     this.handleApply = () => {
       console.log('applying Mod45Percent filter'); // NOTE: Put class name here
       this.filter();
