@@ -19,7 +19,8 @@ export default class Canvas extends Component {
 
     this.updateFilters = () => {
       this.filter.mod45Percent.update(this.canvas, this.ctx);  // NOTE: Add a call to update for each filter here
-      this.filter.modPurp.update(this.canvas, this.ctx);
+      this.filter.colorSwap.update(this.canvas, this.ctx);
+      this.filter.colorSwap.update(this.canvas, this.ctx);
     };
 
     this.handleShrinkImage = () => {
@@ -79,9 +80,10 @@ export default class Canvas extends Component {
     this.imageFileInput.addEventListener('change', this.handleLoadImageFile);
     this.filter = new Filter(this.canvas, this.ctx);
 
-    document.getElementById('normal').addEventListener('click', this.imageLoaded);
+    document.getElementById('none').addEventListener('click', this.imageLoaded);
     document.getElementById('mod45Percent').addEventListener('click', this.filter.mod45Percent.handleApply);  // NOTE: Add new filter event handlers here
     document.getElementById('modPurp').addEventListener('click', this.filter.modPurp.handleApply);
+    document.getElementById('colorSwap').addEventListener('click', this.filter.colorSwap.handleApply);
   }
 
   render() {
@@ -113,9 +115,10 @@ export default class Canvas extends Component {
           <div>
             <span>Filters: </span>
 
-            <button id="normal">Normal</button>
+            <button id="none">None</button>
             <button id="mod45Percent">Mod45Percent</button>{/* NOTE: Add new filter buttons here */}
             <button id="modPurp">ModPurp</button>
+            <button id="colorSwap">ColorSwap</button>
 
           </div>
         </div>
